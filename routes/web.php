@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('admin/article', 'ArticleController');
+Route::resource('admin/jadwal_ibadah', 'Jadwal_ibadahController');
+Route::resource('admin/new', 'NewsController');
+Route::resource('admin/sbu', 'SbuController');
+
+//Route::resource('admin/pelkats', 'Tabel_pelkatController');
+
+Route::resource('admin/warta_ibadah', 'Warta_ibadahController');
+Route::resource('admin/comment', 'CommentController');
+Route::resource('admin/album_image', 'Album_imageController');
