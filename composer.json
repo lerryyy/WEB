@@ -12,7 +12,8 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4",
         "unisharp/laravel-ckeditor": "^4.6",
-        "unisharp/laravel-filemanager": "^1.7"
+        "unisharp/laravel-filemanager": "^1.7",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "appzcoder/crud-generator": "^2.0",
