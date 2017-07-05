@@ -234,6 +234,7 @@ return [
         'HTML' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
 
     ],
 
