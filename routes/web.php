@@ -25,6 +25,11 @@ Route::resource('admin/jadwal_ibadah', 'Jadwal_ibadahController');
 Route::resource('admin/new', 'NewsController');
 Route::resource('admin/sbu', 'SbuController');
 
+//upload dan download data
+Route::get('/uploadfile', 'UpdownController@getView');
+Route::Post('/insertfile',array('as' =>'insertfile','uses'=>'UpdownController@insertfile'));
+Route::get('viewAll', 'UpdownController@downfun');
+
 //Route::resource('admin/pelkats', 'Tabel_pelkatController');
 
 Route::resource('admin/warta_ibadah', 'Warta_ibadahController');
