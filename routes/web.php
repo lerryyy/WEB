@@ -35,3 +35,11 @@ Route::get('viewAll', 'UpdownController@downfun');
 Route::resource('admin/warta_ibadah', 'Warta_ibadahController');
 Route::resource('admin/comment', 'CommentController');
 Route::resource('admin/album_image', 'Album_imageController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
