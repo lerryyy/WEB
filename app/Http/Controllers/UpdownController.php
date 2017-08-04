@@ -13,6 +13,39 @@ use DB;
 class UpdownController extends Controller
 {
     //
+     public function hapus($id) {
+       
+        $downloads=FileModel::find($id);
+
+        if ($downloads !=null) {
+
+            $downloads->delete();
+
+        }
+        return redirect('/masterupload');
+
+    }
+
+    public function edit($id) {
+       $downloads=FileModel::find($id);
+
+        return view('download.editview')->with('downloads',$downloads); 
+    }
+
+     public function update(Request $request){
+        
+        $downloads=FileModel::find($request->id);
+            
+        $downloads->id=$request->input('id');
+        $downloads->File_title=$request->input('file_title');
+        $downloads->file_name=$request->input('file_name');
+
+        $downloads->save();
+
+        return redirect('/masterupload');
+
+      }
+
     public function getView(){
     	return view('frontend.uploadsfile');
     }
@@ -28,7 +61,7 @@ class UpdownController extends Controller
     	$rules = array(
     		'file_title' => 'required',
     		'filenam' => 'required|max:10000|mimes:doc,docx,
-    		jpeg,png,jpg,xlx,xlsx'
+    		jpeg image,png,jpg,xlx,xlsx,jpeg,gif,pdf'
     		);
 
     	$validator = Validator::make(Input::all(), $rules);
@@ -75,5 +108,10 @@ class UpdownController extends Controller
     public function downfun(){
         $downloads=DB::table('filetable')->get();
         return view('download.viewfile',compact('downloads'));
+    }
+
+     public function master(){
+        $downloads=FileModel::all();
+        return view('download.masterdownload',compact('downloads'));
     }
 }

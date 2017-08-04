@@ -2,7 +2,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Dashboard | Perpustakaan</title>
+		<title>Dashboard | HEBRON</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">

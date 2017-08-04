@@ -4,13 +4,24 @@
         {!! Form::text('pelayan_firman', null, ['class' => 'form-control']) !!}
         {!! $errors->first('pelayan_firman', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('waktu') ? 'has-error' : ''}}">
+</div>
+
+
+<div class="form-group {{ $errors->has('waktu') ? 'has-error' : ''}}">
     {!! Form::label('waktu', 'Waktu', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('waktu', null, ['class' => 'form-control']) !!}
-        {!! $errors->first('waktu', '<p class="help-block">:message</p>') !!}
+
+<input type="text" name="daterange" id="waktu" value="01/01/2015 - 01/31/2015" />
+<script type="text/javascript">
+$(function() {
+    $('input[name="daterange"]').daterangepicker();
+});
+</script>
+
     </div>
-</div><div class="form-group {{ $errors->has('ibadah') ? 'has-error' : ''}}">
+</div>
+
+<div class="form-group {{ $errors->has('ibadah') ? 'has-error' : ''}}">
     {!! Form::label('ibadah', 'Ibadah', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::text('ibadah', null, ['class' => 'form-control']) !!}

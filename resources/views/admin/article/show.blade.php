@@ -33,7 +33,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $article->id }}</td>
                                     </tr>
-                                    <tr><th> Image </th><td> {{ $article->image }} </td></tr><tr><th> Title </th><td> {{ $article->title }} </td></tr><tr><th> Content </th><td> {{ $article->content }} </td></tr>
+                                    <tr><th> Image </th><td> {{ $article->image }} </td></tr><tr><th> Title </th><td> {{ $article->title }} </td></tr><tr><th> Content </th><td> {!! $article->content !!} </td></tr>
                                 </tbody>
                             </table>
                         </div>

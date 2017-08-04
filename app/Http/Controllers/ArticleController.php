@@ -50,9 +50,23 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         
-        $requestData = $request->all();
-        
-        Article::create($requestData);
+         $data = $request->all();
+
+         $this->validate($request, [
+            'title' => ['required', 'min:3'],
+            'content' => ['required', 'min:3'],
+            'image' => ['mimes:jpg,jpeg,JPEG,png,gif,bmp', 'max:2024'],
+        ]);
+
+
+        $image = $request->file('image')->getClientOriginalName();
+        $destination = base_path() . '/public/assets/download';
+        $request->file('image')->move($destination, $image);
+ 
+        $data['image'] = $image;
+ 
+ 
+        Article::create($data);
 
         Session::flash('flash_message', 'Article added!');
 
@@ -122,5 +136,10 @@ class ArticleController extends Controller
         Session::flash('flash_message', 'Article deleted!');
 
         return redirect('admin/article');
+    }
+
+     public function multiblog(){
+        $article = Article::orderBy('created_at','desc')->paginate(2);
+        return view ('frontend.multiarticle',compact('article'));
     }
 }

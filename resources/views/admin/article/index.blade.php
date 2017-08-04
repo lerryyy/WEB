@@ -37,7 +37,7 @@
                                 @foreach($article as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->image }}</td><td>{{ $item->title }}</td><td>{{ $item->content }}</td>
+                                        <td>{{ $item->image }}</td><td>{{ $item->title }}</td><td>{!! $item->content !!}</td>
                                         <td>
                                             <a href="{{ url('/admin/article/' . $item->id) }}" title="View article"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/article/' . $item->id . '/edit') }}" title="Edit article"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

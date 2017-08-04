@@ -2514,6 +2514,18 @@ section.section-custom-map-2 section.section {
 	}
 }
 /* #Footer */
+<<<<<<< HEAD
+#footer {
+	background: #0e0e0e;
+	border-top: 4px solid #0e0e0e;
+	font-size: 0.9em;
+	margin-top: 50px;
+	padding: 70px 0 0;
+	position: relative;
+	clear: both;
+}
+=======
+>>>>>>> 37b68e1ff414f50778a545f645e87e4c2f0c06c5
 
 #footer .container .row > div {
 	margin-bottom: 25px;
@@ -2542,7 +2554,11 @@ section.section-custom-map-2 section.section {
 
 #footer ul.nav-list > li a {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+<<<<<<< HEAD
+	line-height: 20px;
+=======
 	
+>>>>>>> 37b68e1ff414f50778a545f645e87e4c2f0c06c5
 	padding-bottom: 11px;
 }
 

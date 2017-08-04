@@ -2,7 +2,7 @@
 <header class="header">
                 <div class="logo-container">
                     <div class="logo">
-                        <img src="{{asset('assets/admin/images/logogpib.jpg')}}" height="45" width="260" />
+                        <img src="{{asset('assets/admin/images/gpibrev.jpg')}}" height="45" width="260" />
                     </div>
                     <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
                         <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -48,8 +48,12 @@
                                     <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
                                 </li>
                                 <li>
-                                    <a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
-                                </li>
+                                   <a role="menuitem" tabindex="-1" href="{{ url('/logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit(); "><i class="fa fa-power-off"></i> Logout</a>
+                                                      <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
                             </ul>
                         </div>
                     </div>
